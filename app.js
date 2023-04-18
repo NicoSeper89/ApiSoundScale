@@ -8,34 +8,34 @@ const { profilesRouter } = require('./routes/profiles.routes');
 const { genresRouter } = require('./routes/genres.routes');
 
 // Controllers
-const { globalErrorHandler } = require("./controllers/error.controller");
-const cors = require("cors");
+/* const { globalErrorHandler } = require("./controllers/error.controller");
+const cors = require("cors"); */
 // Init our Express app
 const app = express();
 
 // Enable Express app to receive JSON data
-app.use(
+/* app.use(
   cors({
     origin: "*",
   })
 );
-app.use(express.json());
+app.use(express.json()); */
 
 // Define endpoints
-app.use('/api/v1/users', usersRouter);
+/* app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/profiles', profilesRouter);
 app.use("/api/v1/tracks", tracksRouter);
-app.use("/api/v1/genres", genresRouter);
+app.use("/api/v1/genres", genresRouter); */
 
 // Global error handler
-app.use(globalErrorHandler);
+/* app.use(globalErrorHandler); */
 
 // Catch non-existing endpoints
-app.all("*", (req, res) => {
+/* app.all("*", (req, res) => {
   res.status(404).json({
     status: "error",
     message: `${req.method} ${req.url} does not exists in our server`,
   });
-});
+}); */
 
 module.exports = { app };
