@@ -22,10 +22,10 @@ app.use(
 app.use(express.json());
 
 // Define endpoints
-/* app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/profiles', profilesRouter);
 app.use("/api/v1/tracks", tracksRouter);
-app.use("/api/v1/genres", genresRouter); */
+app.use("/api/v1/genres", genresRouter);
 
 // Global error handler
 app.use(globalErrorHandler);
