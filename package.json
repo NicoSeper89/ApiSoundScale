@@ -4,9 +4,9 @@
 	"description": "A simple Express server",
 	"main": "index.js",
 	"scripts": {
-		"start": "nodemon server.js"
+		"start": "nodemon -L"
 	},
-	"author": "Maximiliano Rangel",
+	"author": "soundScale app",
 	"license": "ISC",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
