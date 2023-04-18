@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { app } = require("./index");
+const { app } = require("./app");
 
 // Utils
 const { initModels } = require("./models/initModels");
