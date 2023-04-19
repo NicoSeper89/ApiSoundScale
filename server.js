@@ -38,12 +38,12 @@ const startServer = async () => {
     await initModels();
     await db.sync({ force: false });
     // Set server to listen
-    const PORT = process.env.PORT || 4000;
+    const PORT = 4000;
     app.listen(PORT, async () => {
       console.log(`Express app running on port ${PORT}!`);
     
-      /* const promises = musicGenres.map((genreName) => Genre.findOrCreate({where: {name: genreName}}))
-      await Promise.all(promises); */
+      const promises = musicGenres.map((genreName) => Genre.findOrCreate({where: {name: genreName}}))
+      await Promise.all(promises);
 
     });
   } catch (error) {

@@ -16,7 +16,7 @@ const app = express();
 // Enable Express app to receive JSON data
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:5173",
   })
 );
 app.use(express.json());
