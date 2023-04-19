@@ -36,15 +36,15 @@ const startServer = async () => {
     await db.authenticate();
     // Establish the relations between models
     await initModels();
-    await db.sync({ force: false });
+    await db.sync({ force: true });
     // Set server to listen
-    const PORT = 4000;
+    const PORT = process.env.PORT || 4000;
     app.listen(PORT, async () => {
       console.log(`Express app running on port ${PORT}!`);
     
       const promises = musicGenres.map((genreName) => Genre.findOrCreate({where: {name: genreName}}))
       await Promise.all(promises);
-
+      
     });
   } catch (error) {
     console.log(error);
