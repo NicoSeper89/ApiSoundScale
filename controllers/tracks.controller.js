@@ -221,7 +221,7 @@ const getTracks = catchAsync(async (req, res, next) => {
     res.status(200).json({
       status: "success",
       data: {
-        tracks: resArray,
+        tracks,
         pagination: {
           pageSize,
           page,
