@@ -212,7 +212,7 @@ const getTracks = catchAsync(async (req, res, next) => {
     res.status(200).json({
       status: "success",
       data: {
-        tracks,
+        tracks: resArray,
         pagination: {
           pageSize,
           page,
@@ -444,7 +444,7 @@ const getUserTracks = catchAsync(async (req, res, next) => {
       limit,
       order: [["createdAt", "ASC"]],
     });
-
+    
     const total = await Track.count({
       where:
         type === "owner"

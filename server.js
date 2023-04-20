@@ -42,9 +42,9 @@ const startServer = async () => {
     app.listen(PORT, async () => {
       console.log(`Express app running on port ${PORT}!`);
     
-      /* const promises = musicGenres.map((genreName) => Genre.findOrCreate({where: {name: genreName}}))
-      await Promise.all(promises); */
-
+      const promises = musicGenres.map((genreName) => Genre.findOrCreate({where: {name: genreName}}))
+      await Promise.all(promises);
+      
     });
   } catch (error) {
     console.log(error);
